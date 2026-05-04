@@ -1,0 +1,49 @@
+/* cta-section.css */
+.cta-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+   background: linear-gradient(
+    to bottom right,
+    #414b5b,
+    #495260
+  );
+
+}
+
+.cta-container {
+  max-width: 48rem; /* max-w-3xl */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+}
+
+.cta-description {
+  color: #ffffff; /* text-green-100 */
+  margin-bottom: 2.5rem;
+  font-size: 1.125rem; /* text-lg */
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  color: #111827;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: scale(1.05);
+}

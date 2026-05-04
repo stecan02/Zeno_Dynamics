@@ -1,64 +1,185 @@
+'use client';
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
+import Navbar from "@/components/navbar";
+import "./hero-section.css";
+import "./zeno-section.css";
+import "./cta-section.css";
 
 export default function Home() {
+  const bannerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (bannerRef.current) {
+      observer.observe(bannerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <div>
+      <Navbar />
+      <main>
+        {/* Hero Section */}
+        <section className="hero-section">
+          {/* Background gradient */}
+          <div className="hero-bg"></div>
+          {/* Accent decoration */}
+          <div className="hero-accent top"></div>
+          <div className="hero-accent bottom"></div>
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Una nuova<span className="highlight"> gestione dei rifiuti</span> per il tuo business
+            </h1>
+            <p className="hero-desc">
+              Porta innovazione nella tua realtà con una soluzione intelligente e sostenibile...
+            </p>
+            <div className="hero-btns">
+              <button className="hero-btn-primary">Inizia Ora</button>
+              <a href="#Prodotto" className="hero-btn-primary">
+               Scopri di Più
+              </a>
+            </div>
+            {/* Stats */}
+            <div className="stats-grid">
+              <div>
+                <div className="stats-item-title">200+</div>
+                <div className="stats-item-desc">Feedback positivi</div>
+              </div>
+              <div>
+                <div className="stats-item-title">95%</div>
+                <div className="stats-item-desc">Tasso di Successo</div>
+              </div>
+              <div>
+                <div className="stats-item-title">5+</div>
+                <div className="stats-item-desc">Mesi di R&S</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Zeno Banner Section */}
+        <section id="Prodotto" className="zeno-section">
+          <div className="zeno-container">
+           <div className="zeno-header">
+            <h2 className="zeno-main-title">Il Nostro Prodotto</h2>
+           </div>
+       
+
+          <div
+              ref={bannerRef}
+              className={`banner-wrapper ${isVisible ? "banner-visible" : ""}`}
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+
+              {/* CARD PRINCIPALE (SINISTRA - SOPRA) */}
+              <div className="banner-card banner-left">
+                <div className="banner-content">
+                  <h3 className="banner-title">
+                    Zeno, lo smart-bin del futuro
+                  </h3>
+
+                  <p className="banner-description">
+                    Nasce per ridefinire il modo in cui le aziende gestiscono i rifiuti. Un sistema intelligente che unisce automazione e AI per creare un processo efficiente, sostenibile e trasparente.
+                  </p>
+
+                  <button className="banner-button">
+                    Scopri Zeno →
+                  </button>
+                </div>
+              </div>
+
+              {/* CARD SECONDARIA (DESTRA - SOTTO) */}
+              <div className="banner-card banner-right">
+                <div className="banner-content">
+                  <h3 className="banner-title">
+                    Zeno riconosce e smista i rifiuti in autonomia
+                  </h3>
+
+                  <p className="banner-description_bis">
+                    Il funzionamento è semplice ed intuitivo : gli utenti si avvicinano al cestino, dove nella parte superiore trovano un unico vano di inserimento, in cui possono depositare i rifiuti di vario tipo, dopodichè il gioco è fatto, al resto pensa Zeno...
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <section className="zeno-image-section">
+  <div className="zeno-image-wrapper">
+
+    {/* IMMAGINE */}
+    <div className="zeno-image-container">
+      <Image
+        src="/prototipo.png"
+        alt="Zeno Image"
+        width={900}
+        height={600}
+        className="zeno-image"
+      />
+    </div>
+
+    {/* BARRA SEPARATRICE */}
+    <div className="vertical-divider"></div>
+
+    {/* TESTO A DESTRA */}
+    <div className="zeno-info">
+      <h2 className="zeno-info-title">
+        Perchè proprio Zeno? 
+      </h2>
+
+      <p className="zeno-info-text">
+        Zeno ridefinisce il concetto di smart-bin grazie a un sistema intelligente capace di riconoscere e smistare più rifiuti simultaneamente, ottimizzando ogni fase della raccolta.
+      </p>
+
+      {/* STATS GRID */}
+      <div className="stats-grid zeno-stats">
+        <div>
+          <div className="stats-item-title">AI</div>
+          <div className="stats-item-desc">Riconoscimento intelligente</div>
+        </div>
+
+        <div>
+          <div className="stats-item-title">24/7</div>
+          <div className="stats-item-desc">Operatività continua</div>
+        </div>
+
+        <div>
+          <div className="stats-item-title">Smart</div>
+          <div className="stats-item-desc">Monitoraggio avanzato</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+        {/* CTA Section */}
+        <section className="cta-section">
+         <div className="cta-container">
+          <h2 className="cta-title">Pronto a Iniziare?</h2>
+          <p className="cta-description">
+          Compila il nostro form e preparati a ricevere il tuo primo Zeno
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+          <button className="cta-button">
+          Form
+          </button>
+          </div>
+        </section>
       </main>
     </div>
   );

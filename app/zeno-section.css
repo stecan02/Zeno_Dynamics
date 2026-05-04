@@ -1,0 +1,283 @@
+/* SECTION */
+.zeno-section {
+  padding-top: 0.1rem;
+  padding-bottom: 8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  background: #fff;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
+
+.zeno-header {
+  text-align: center;
+  margin-bottom: 4rem; /* Spazio tra titolo e banner */
+}
+
+.zeno-main-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111827; /* Colore scuro dal tuo globals.css */
+  margin-bottom: 1rem;
+}
+
+.zeno-container {
+  max-width: 80rem;
+  margin: 0 auto;
+
+  width: 100%;
+
+  position: relative;
+}
+
+/* WRAPPER */
+.banner-wrapper {
+  position: relative;
+
+  width: 100%;
+  height: 420px;
+
+  opacity: 0;
+
+  
+
+  transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.banner-visible {
+  opacity:1;
+  transform: translateX(0);
+}
+
+/* =========================
+   CARD BASE
+========================= */
+.banner-card {
+  position: absolute;
+
+  width: 90%;
+  max-width: 1100px;
+
+  min-height: 340px;
+
+  border-radius: 24px;
+
+  padding: 3rem 4rem;
+
+  color: white;
+
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =========================
+   CARD SINISTRA (MAIN - SOPRA)
+========================= */
+.banner-left {
+  left: 0;
+  top: 0;
+  opacity:0.95;
+  z-index: 1;
+
+  background: linear-gradient(90deg, #059669, #10b981);
+
+  transform: translateX(-120vw); 
+  transition: transform 1.2s ease-out;
+}
+
+.banner-visible .banner-left {
+  transform: translateX(-10vw);
+}
+
+/* =========================
+   CARD DESTRA (SECONDARIA - SOTTO)
+========================= */
+.banner-right {
+  right: 0;
+  top: 150px;   /* più bassa */
+
+  z-index: 3;
+
+  opacity: 1;
+
+  background: linear-gradient(
+    to bottom right,
+    #414b5b,
+    #495260
+  );
+
+  transform: translateX(80vw) scale(0.97);
+  transition: transform 1.2s ease-out;
+}
+
+.banner-visible .banner-right {
+  transform: translateX(20vw) scale(0.97);
+}
+
+/* =========================
+   TEXT
+========================= */
+.banner-title {
+  font-size: 3rem;
+  font-weight: 700;
+
+  margin-bottom: 1.5rem;
+
+  line-height: 1.1;
+}
+
+.banner-description {
+  font-size: 1.2rem;
+
+  max-width: 32rem;
+
+  color: #dcfce7;
+
+  line-height: 1.6;
+
+  margin-bottom: 2rem;
+}
+
+.banner-description_bis {
+  font-size: 1.2rem;
+
+  max-width: 50rem;
+
+  color: #dcfce7;
+
+  line-height: 1.6;
+
+  margin-bottom: 2rem;
+}
+
+/* BUTTON */
+.banner-button {
+  width: fit-content;
+
+  padding: 1rem 2rem;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: white;
+  color: #16a34a;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.banner-button:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 768px) {
+  .banner-wrapper {
+    height: auto;
+  }
+
+  .banner-card {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 1.5rem;
+  }
+
+  .banner-right {
+    top: 0;
+  }
+}
+
+.zeno-image-section {
+  width: 100%;
+  padding: 120px 8%;
+  background: #ffffff;
+}
+
+.zeno-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.zeno-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.zeno-image {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  object-fit: contain;
+  transform: scale(1.6);
+}
+
+.vertical-divider {
+  width: 1px;
+  height: 500px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 0, 0, 0.4),
+    transparent
+  );
+}
+
+.zeno-info {
+  flex: 1;
+  color:#111827;
+}
+
+.zeno-info-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.zeno-info-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.zeno-stats {
+  margin-top: 30px;
+}
+
+@media (max-width: 1024px) {
+  .zeno-image-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .vertical-divider {
+    width: 80%;
+    height: 1px;
+  }
+
+  .zeno-info-text {
+    max-width: 100%;
+  }
+}
