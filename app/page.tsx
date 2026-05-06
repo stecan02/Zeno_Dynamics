@@ -48,7 +48,9 @@ export default function Home() {
               Porta innovazione nella tua realtà con una soluzione intelligente e sostenibile...
             </p>
             <div className="hero-btns">
-              <button className="hero-btn-primary">Inizia Ora</button>
+              <a href="#Form" className="hero-btn-primary">
+                Inizia ora
+              </a>
               <a href="#Prodotto" className="hero-btn-primary">
                Scopri di Più
               </a>
@@ -96,7 +98,7 @@ export default function Home() {
                   </p>
 
                   <button className="banner-button">
-                    Scopri Zeno →
+                    Scopri i nostri servizi →
                   </button>
                 </div>
               </div>
@@ -169,7 +171,7 @@ export default function Home() {
 </section>
 
         {/* CTA Section */}
-        <section className="cta-section">
+        <section id="Form" className="cta-section">
          <div className="cta-container">
           <h2 className="cta-title">Pronto a Iniziare?</h2>
           <p className="cta-description">
