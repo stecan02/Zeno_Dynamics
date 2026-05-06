@@ -1,3 +1,86 @@
+  .hero-btns {
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-btn-primary {
+    width: 85%;
+    min-width: 160px;
+    max-width: 260px;
+    padding: 0.85rem 0.5rem;
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+/* --- Mobile Responsive Hero Section (2026) --- */
+@media (max-width: 640px) {
+  .hero-section {
+    min-height: 100vh;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
+    justify-content: flex-start;
+  }
+  .hero-bg {
+    background: linear-gradient(135deg, #ffffff 0%, #f9fafb 80%, #f3f4f6 100%);
+  }
+  .hero-content {
+    max-width: 98vw;
+    padding: 0 0.2rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    line-height: 1.15;
+  }
+  .hero-desc {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    max-width: 95vw;
+    padding: 0 0.2rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 0.1rem;
+  }
+  .hero-btn-primary {
+    width: 40%;
+    padding: 0.9rem 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    padding-top: 0.1rem;
+    border-top-width: 2px;
+  }
+  .stats-item-title {
+    font-size: 1.3rem;
+  }
+  .stats-item-desc {
+    font-size: 0.98rem;
+  }
+  .hero-accent.top, .hero-accent.bottom {
+    width: 10rem;
+    height: 10rem;
+    top: 1.5rem;
+    left: 1.5rem;
+    right: auto;
+    bottom: auto;
+    opacity: 0.18;
+    filter: blur(18px);
+  }
+}
 /* Hero Section */
 .hero-section {
   min-height: 100vh;

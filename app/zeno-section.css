@@ -1,3 +1,63 @@
+/* --- Mobile Responsive Zeno Section (2026) --- */
+@media (max-width: 768px) {
+  .zeno-section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 2.5rem;
+    min-height: unset;
+    box-sizing: border-box;
+  }
+  .zeno-header {
+    margin-bottom: 2.2rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+  .zeno-main-title {
+    font-size: 1.6rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .zeno-container {
+    max-width: 99vw;
+    padding: 0;
+  }
+  .banner-wrapper {
+    height: auto;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    box-sizing: border-box;
+  }
+  .banner-card {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    box-sizing: border-box;
+  }
+  .banner-title,
+  .banner-description,
+  .banner-description_bis {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .banner-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+  }
+  .banner-description,
+  .banner-description_bis {
+    font-size: 1rem;
+    margin-bottom: 1.1rem;
+    max-width: 98vw;
+  }
+}
 /* SECTION */
 .zeno-section {
   padding-top: 0.1rem;
@@ -125,7 +185,7 @@
    TEXT
 ========================= */
 .banner-title {
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-weight: 700;
 
   margin-bottom: 1.5rem;
