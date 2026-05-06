@@ -29,12 +29,18 @@ export default function Home() {
 
     return () => observer.disconnect();
   }, []);
+
+  const [heroVisible, setHeroVisible] = useState(false);
+
+  useEffect(() => {
+  setHeroVisible(true);
+  }, []);
   return (
     <div>
       <Navbar />
       <main>
         {/* Hero Section */}
-        <section className="hero-section">
+        <section className={`hero-section ${heroVisible ? "show" : ""}`}>
           {/* Background gradient */}
           <div className="hero-bg"></div>
           {/* Accent decoration */}

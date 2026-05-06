@@ -91,7 +91,17 @@
   padding-right: 1rem;
   position: relative;
   overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
 }
+
+.hero-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
