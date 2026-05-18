@@ -10,6 +10,16 @@ import "./cta-section.css";
 export default function Home() {
   const bannerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const images = ["/zeno_real6.png", "/zeno_real.png"];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  }, 5000);
+
+  return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,6 +45,8 @@ export default function Home() {
   useEffect(() => {
   setHeroVisible(true);
   }, []);
+
+
   return (
     <div>
       <Navbar />
@@ -83,8 +95,59 @@ export default function Home() {
         <section id="Prodotto" className="zeno-section">
           <div className="zeno-container">
            <div className="zeno-header">
-            <h2 className="zeno-main-title">Il Nostro Prodotto</h2>
-           </div>
+  <h2 className="zeno-main-title">La nostra soluzione</h2>
+
+  <div className="zeno-header-content">
+
+    {/* LEFT: CAROUSEL */}
+    <div className="zeno-carousel">
+      <div
+        className="zeno-carousel-track"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((src, i) => (
+          <Image
+            key={i}
+            src={src}
+            alt={`Zeno ${i}`}
+            width={400}
+            height={300}
+            className="zeno-carousel-image"
+          />
+        ))}
+      </div>
+
+      <div className="zeno-dots">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            className={`zeno-dot ${i === currentIndex ? "active" : ""}`}
+            onClick={() => setCurrentIndex(i)}
+          />
+        ))}
+      </div>
+    </div>
+
+    {/* RIGHT: IMAGE + TEXT */}
+    <div className="zeno-side">
+
+  {/* LOGO */}
+  <div className="zeno-logo-wrapper">
+    <Image
+      src="/Zeno_logo.png"
+      alt="Zeno info"
+      fill
+      className="zeno-side-image"
+    />
+  </div>
+
+</div>
+
+
+    
+
+  </div>
+</div>
        
 
           <div
