@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zeno - Soluzioni Professionali",
-  description: "Trasforma le tue idee in realtà con soluzioni innovative e moderne",
+  title: "Zeno - Lo smart-bin del futuro per il tuo business",
+  description: "L'era della gestione rifiuti 2.0, scegli Zeno Dynamics e dai il via alla transizione sostenibile e tecnologica",
 };
 
 export default function RootLayout({

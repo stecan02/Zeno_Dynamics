@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import "./zeno-section.css";
 
 const images = ["/zeno_real6.png", "/zeno_real.png"];
@@ -98,7 +99,10 @@ const [zenoVisible, setZenoVisible] = useState(false);
                   Nasce per ridefinire il modo in cui le aziende gestiscono i rifiuti. Un sistema intelligente che unisce automazione e AI per creare un processo efficiente, sostenibile e trasparente.
                 </div>
                 <div className="zeno-side-button">
-                  <button className="zeno-side-btn">Scopri i nostri servizi →</button>
+                  <Link href="/services" className="zeno-side-btn">
+  Scopri i nostri servizi →
+</Link>
+                   
                 </div>
               </div>
 

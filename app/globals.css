@@ -22,6 +22,7 @@
 
 html, body {
   background-color: var(--background);
+  color-scheme: light;
   color: var(--foreground);
   margin: 0;
   padding: 0;
