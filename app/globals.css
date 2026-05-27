@@ -20,6 +20,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
+html {
+  color-scheme: light;
+}
+
+:root {
+  color-scheme: light;
+}
+
 html, body {
   background-color: var(--background);
   color-scheme: light;
