@@ -98,7 +98,7 @@ const [zenoVisible, setZenoVisible] = useState(false);
                   Nasce per ridefinire il modo in cui le aziende gestiscono i rifiuti. Un sistema intelligente che unisce automazione e AI per creare un processo efficiente, sostenibile e trasparente.
                 </div>
                 <div className="zeno-side-button">
-                  <button className="zeno-side-btn">Scopri i nostri servizi →</button>
+                  <a href="./services"  className="zeno-side-btn">Scopri i nostri servizi →</a>
                 </div>
               </div>
 
