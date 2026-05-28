@@ -176,31 +176,6 @@
   }
 }
 
-/* ─── FIX IOS BACKFACE ─── */
-.flip-card-front,
-.flip-card-back {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: translateZ(0);  /* ← forza GPU layer separato */
-}
-
-.flip-card-front * ,
-.flip-card-back * {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-inner {
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  transform: translateZ(0);  /* ← forza GPU layer */
-}
-
-.service-item.flip-card {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
 /* TITLE */
 .service-title-big {
   color: white;
