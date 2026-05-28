@@ -524,6 +524,34 @@
   -webkit-transform: translateZ(0);
 }
 
+/* immagini fuori dai bordi sul fronte */
+.flip-card-front {
+  overflow: visible;
+}
+
+.flip-card-front .service-item-float-img,
+.flip-card-front .service-item-float-img-bis {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(2px);
+  -webkit-transform: translateZ(2px);
+}
+
+/* nasconde le immagini durante il flip */
+.flip-card:hover .flip-card-front .service-item-float-img,
+.flip-card:hover .flip-card-front .service-item-float-img-bis,
+.flip-card:focus-within .flip-card-front .service-item-float-img,
+.flip-card:focus-within .flip-card-front .service-item-float-img-bis {
+  visibility: hidden;
+  transition: visibility 0s 0.3s;
+}
+
+/* nasconde anche il titolo del fronte durante il flip */
+.flip-card:hover .flip-card-front,
+.flip-card:focus-within .flip-card-front {
+  pointer-events: none;
+}
+
 /* =========================
    TABLET
 ========================= */
