@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" style={{ colorScheme: 'light' }} className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="it" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="min-h-screen">{children}</body>
     </html>
   );

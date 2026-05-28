@@ -1,3 +1,9 @@
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background: var(--background) !important;
+    color: var(--foreground) !important;
+  }
+}
 @import "tailwindcss";
 
 :root {
