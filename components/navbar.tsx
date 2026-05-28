@@ -25,10 +25,10 @@ export default function Navbar() {
               About
             </Link>
             <Link href="/services" className="navLink">
-              Services
+              Servizi
             </Link>
             <Link href="/contact" className="navLink">
-              Contact
+              Contatti
             </Link>
           </div>
 
