@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="it" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
         <meta name="color-scheme" content="light" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
       <body className="min-h-screen">{children}</body>
     </html>
