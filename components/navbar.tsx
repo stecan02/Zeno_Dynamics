@@ -84,8 +84,8 @@ export default function Navbar() {
           <Link href="/services" className="mobileLink">
             Services
           </Link>
-          <Link href="/contact" className="mobileLink">
-            Contact
+          <Link href="/contatti" className="mobileLink">
+            Contatti
           </Link>
         </div>
       )}
