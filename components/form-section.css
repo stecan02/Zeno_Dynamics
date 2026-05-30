@@ -1,0 +1,261 @@
+.form-section {
+  background: #e2e4e4;
+  padding: 6rem 3rem;
+}
+
+.form-container {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(171, 235, 182, 0.65) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  border-radius: 20px;
+  box-shadow: 14px 20px 30px rgb(167, 167, 167);
+}
+
+.form-container2 {
+  max-width: 90%;
+  margin: 4rem auto 0;
+  padding: 3rem 8rem;
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+  background: linear-gradient(90deg, #000000, #10b981);
+  border-radius: 20px;
+  box-shadow: 14px 20px 30px rgb(167, 167, 167);
+}
+
+.sx-item {
+  padding: 2rem;
+}
+
+.sx-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #000000, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.sx-description {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.sx-item-bis {
+  padding: 1rem 5rem;
+  text-align: center;
+}
+
+.contact-card {
+  padding: 2rem;
+  background: white;
+  border-radius: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #000000, #10b981);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.contact-descr {
+  font-size: 0.86rem;
+  color: #4b5563;
+}
+
+.form-tag {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.dx-item {
+  background: rgba(255, 255, 255, 0.751);
+  padding: 2rem;
+  border-radius: 24px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 1rem;
+  border-bottom: 1px solid #d1d5db;
+  font-size: 1rem;
+  outline: none;
+}
+
+.submit-btn {
+  padding: 1rem;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #059669, #10b981);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  box-shadow: 0 12px 40px 0 rgba(16, 185, 129, 0.25);
+  transform: translateY(-4px);
+  background: linear-gradient(90deg, #43ca9f, #10b981);
+}
+
+
+/* ─── RESPONSIVE ─── */
+
+@media (max-width: 1024px) {
+  .form-container {
+    gap: 2.5rem;
+    padding: 2.5rem;
+  }
+
+  .form-container2 {
+    padding: 3rem 4rem;
+    gap: 1.5rem;
+  }
+
+  .sx-item-bis {
+    padding: 1rem 2rem;
+  }
+
+  .sx-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .form-container {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .form-container2 {
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+
+  .sx-item {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .sx-item-bis {
+    padding: 1rem;
+  }
+
+  .sx-title {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .sx-description {
+    font-size: 0.95rem;
+  }
+
+  .contact-card {
+    padding: 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.2rem;
+  }
+
+  .dx-item {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section {
+    padding: 3rem 1rem;
+  }
+
+  .form-container {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .form-container2 {
+    padding: 1.5rem;
+    border-radius: 16px;
+    margin-top: 2rem;
+  }
+
+  .sx-title {
+    font-size: 1.5rem;
+  }
+
+  .sx-description {
+    font-size: 0.9rem;
+  }
+
+  .contact-card {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .dx-item {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .submit-btn {
+    padding: 0.85rem;
+    font-size: 0.95rem;
+  }
+}

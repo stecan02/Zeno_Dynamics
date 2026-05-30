@@ -27,7 +27,7 @@ export default function Navbar() {
             <Link href="/services" className="navLink">
               Servizi
             </Link>
-            <Link href="/contact" className="navLink">
+            <Link href="/contatti" className="navLink">
               Contatti
             </Link>
           </div>

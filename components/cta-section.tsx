@@ -13,7 +13,7 @@ const CtaSection: React.FC<CtaSectionProps> = ({ ctaVisible }) => (
             <p className="cta-description">
               Compila il nostro form e preparati a ricevere il tuo primo Zeno
             </p>
-            <button className="cta-button">Form</button>
+            <a href="./contatti" className="cta-button">Contattaci</a>
           </div>
         </section>
     </section>
