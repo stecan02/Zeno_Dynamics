@@ -131,42 +131,6 @@ const [zenoVisible, setZenoVisible] = useState(false);
 
         </div>
       </section>
-
-      <section className="zeno-image-section">
-        <div className="zeno-image-wrapper">
-          <div className="zeno-image-container">
-            <Image
-              src="/prototipo.png"
-              alt="Zeno Image"
-              width={900}
-              height={600}
-              className="zeno-image"
-            />
-          </div>
-          <div className="vertical-divider"></div>
-          <div className="zeno-info">
-            <h2 className="zeno-info-title">Perchè proprio Zeno?</h2>
-            <p className="zeno-info-text">
-              Zeno ridefinisce il concetto di smart-bin grazie a un sistema intelligente capace di riconoscere e smistare più rifiuti simultaneamente, ottimizzando ogni fase della raccolta.
-            </p>
-            <div className="stats-grid zeno-stats">
-              <div>
-                <div className="stats-item-title">AI</div>
-                <div className="stats-item-desc">Riconoscimento intelligente</div>
-              </div>
-              <div>
-                <div className="stats-item-title">24/7</div>
-                <div className="stats-item-desc">Operatività continua</div>
-              </div>
-              <div>
-                <div className="stats-item-title">Smart</div>
-                <div className="stats-item-desc">Monitoraggio avanzato</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       
     </>
   );

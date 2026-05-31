@@ -228,12 +228,6 @@
 /* =========================
    IMAGE SECTION
 ========================= */
-.zeno-image-section {
-  width: 100%;
-  padding: 6rem 1rem;
-  background: white;
-}
-
 .zeno-image-wrapper {
   display: flex;
   align-items: center;

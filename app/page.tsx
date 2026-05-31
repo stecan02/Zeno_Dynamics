@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
 import ZenoSection from "@/components/zeno-section";
 import ServiceSection from "@/components/services";
+import UnicSection from "@/components/unic-section";
 import CtaSection from "@/components/cta-section";
 import Footer from "@/components/footer";
 
@@ -31,9 +32,10 @@ export default function Home() {
         {/* Services Section */}
         <ServiceSection />
 
-        {/* CTA Section */}
+        <UnicSection />
+
         <CtaSection ctaVisible={ctaVisible} />
-        
+    
       </main>
       <Footer />
     </div>

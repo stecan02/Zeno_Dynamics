@@ -1,0 +1,116 @@
+/* ─── SEZIONE PERCHÉ ZENO ─── */
+.zeno-image-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.zeno-image-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.zeno-uniq-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 3rem;
+}
+
+.zeno-uniq-title {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 3rem;
+}
+
+.zeno-uniq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+/* ─── SINISTRA ─── */
+.zeno-uniq-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.zeno-uniq-text {
+  font-size: 1.07rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+.zeno-uniq-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 2px solid #eaebe5;
+}
+
+.zeno-uniq-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* ─── DESTRA ─── */
+.zeno-uniq-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zeno-uniq-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 14px 20px 30px rgb(74, 73, 73);
+}
+
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 768px) {
+  .zeno-uniq-wrapper {
+    padding: 3rem 1.5rem;
+  }
+
+  .zeno-uniq-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .zeno-uniq-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .zeno-uniq-right {
+    order: -1; /* immagine sopra su mobile */
+  }
+
+  .zeno-uniq-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .zeno-uniq-title {
+    font-size: 2.6rem;
+  }
+
+  .zeno-uniq-text {
+    font-size: 0.95rem;
+  }
+
+  .zeno-uniq-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+}
