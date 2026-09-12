@@ -9,11 +9,15 @@ function PackageCard({ pkg }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div className="group h-[620px] [perspective:1000px]">
-      {/* Contenitore 3D: su desktop gira in hover, su mobile gira tramite lo stato del click */}
+    <div 
+      className="group h-[620px] [perspective:1000px] cursor-pointer"
+      // Il click gestisce il giro su mobile. Su desktop l'hover gestisce tutto da solo.
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      {/* Contenitore 3D: su desktop usa l'hover, su mobile usa lo stato isFlipped */}
       <div className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
         isFlipped ? '[transform:rotateY(180deg)]' : ''
-      } lg:group-hover:[transform:rotateY(180deg)]`}>
+      } lg:[transform:none] lg:group-hover:[transform:rotateY(180deg)]`}>
         
         {/* ==================== FACCIA ANTERIORE (FRONTE) ==================== */}
         <Card 
@@ -64,20 +68,16 @@ function PackageCard({ pkg }) {
               pkg.highlight ? "text-emerald-400" : "text-emerald-600"
             }`}>
               <RotateCw className="w-3.5 h-3.5" />
-              <span>Passa sopra o clicca sotto per le specifiche</span>
+              <span>Passa il mouse o tocca per le specifiche</span>
             </div>
           </CardContent>
 
-          {/* Pulsante sul fronte per girare la carta comodamente anche da mobile */}
           <CardFooter className="p-6 md:p-8 pt-0">
-            <div 
-              onClick={() => setIsFlipped(true)}
-              className={`w-full py-3 rounded-2xl text-center text-xs font-extrabold tracking-wide border transition-all duration-300 flex items-center justify-center gap-1.5 shadow-md cursor-pointer ${
-                pkg.highlight 
-                  ? "bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 text-slate-950 border-emerald-300 shadow-emerald-500/30 hover:brightness-110" 
-                  : "bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-500 shadow-emerald-600/25 hover:from-emerald-500 hover:to-teal-500"
-              }`}
-            >
+            <div className={`w-full py-3 rounded-2xl text-center text-xs font-extrabold tracking-wide border transition-all duration-300 flex items-center justify-center gap-1.5 shadow-md ${
+              pkg.highlight 
+                ? "bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 text-slate-950 border-emerald-300 shadow-emerald-500/30" 
+                : "bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-500 shadow-emerald-600/25"
+            }`}>
               <span>Scopri funzionalità</span>
               <span className="text-sm">➔</span>
             </div>
@@ -98,13 +98,9 @@ function PackageCard({ pkg }) {
                 Incluso in {pkg.name}
               </CardTitle>
             </div>
-            {/* Pulsante per tornare indietro sul retro */}
-            <button 
-              onClick={() => setIsFlipped(false)}
-              className="text-xs font-bold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-3 py-1.5 rounded-full hover:bg-emerald-500/30 transition-colors flex items-center gap-1 cursor-pointer"
-            >
-              <RotateCw className="w-3 h-3" /> Indietro
-            </button>
+            <span className="text-xs font-bold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-3 py-1.5 rounded-full flex items-center gap-1">
+              <RotateCw className="w-3 h-3" /> Chiudi
+            </span>
           </CardHeader>
 
           <CardContent className="p-6 md:p-8 py-4 flex-1 overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#334155_transparent]">
@@ -118,7 +114,7 @@ function PackageCard({ pkg }) {
             </ul>
           </CardContent>
 
-          <CardFooter className="p-6 md:p-8 pt-4 border-t border-slate-800/80 shrink-0">
+          <CardFooter className="p-6 md:p-8 pt-4 border-t border-slate-800/80 shrink-0" onClick={(e) => e.stopPropagation()}>
             <Button 
               asChild
               className={`w-full h-11 rounded-2xl font-bold text-xs cursor-pointer transition-all duration-300 ${
@@ -133,7 +129,7 @@ function PackageCard({ pkg }) {
                     ? `/contatti?topic=${pkg.topic}`
                     : pkg.id === 'zeno-one' || pkg.name === 'Zeno One'
                       ? '/contatti?topic=tech' 
-                      : '/contatti$topic=quote' // correggici se era /contatti?topic=quote
+                      : '/contatti?topic=quote'
                 } 
                 className="flex items-center justify-center gap-2"
               >
