@@ -9,14 +9,11 @@ function PackageCard({ pkg }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div 
-      className="group h-[620px] [perspective:1000px] cursor-pointer"
-      onClick={() => setIsFlipped(!isFlipped)}
-    >
-      {/* Contenitore 3D con supporto sia per click (mobile) che per hover (desktop) */}
+    <div className="group h-[620px] [perspective:1000px]">
+      {/* Contenitore 3D: su desktop gira in hover, su mobile gira tramite lo stato del click */}
       <div className={`relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] ${
         isFlipped ? '[transform:rotateY(180deg)]' : ''
-      } group-hover:[transform:rotateY(180deg)]`}>
+      } lg:group-hover:[transform:rotateY(180deg)]`}>
         
         {/* ==================== FACCIA ANTERIORE (FRONTE) ==================== */}
         <Card 
@@ -63,20 +60,24 @@ function PackageCard({ pkg }) {
               {pkg.description}
             </CardDescription>
 
-            <div className={`mt-auto pt-4 flex items-center justify-center gap-2 text-xs font-semibold transition-colors ${
-              pkg.highlight ? "text-emerald-400 group-hover:text-emerald-300" : "text-emerald-600 group-hover:text-emerald-700"
+            <div className={`mt-auto pt-4 flex items-center justify-center gap-2 text-xs font-semibold ${
+              pkg.highlight ? "text-emerald-400" : "text-emerald-600"
             }`}>
               <RotateCw className="w-3.5 h-3.5" />
-              <span>Tocca o passa sopra per le specifiche</span>
+              <span>Passa sopra o clicca sotto per le specifiche</span>
             </div>
           </CardContent>
 
+          {/* Pulsante sul fronte per girare la carta comodamente anche da mobile */}
           <CardFooter className="p-6 md:p-8 pt-0">
-            <div className={`w-full py-3 rounded-2xl text-center text-xs font-extrabold tracking-wide border transition-all duration-300 flex items-center justify-center gap-1.5 shadow-md ${
-              pkg.highlight 
-                ? "bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 text-slate-950 border-emerald-300 shadow-emerald-500/30 group-hover:brightness-110 group-hover:shadow-emerald-500/40" 
-                : "bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-500 shadow-emerald-600/25 group-hover:from-emerald-500 group-hover:to-teal-500 group-hover:shadow-emerald-500/35"
-            }`}>
+            <div 
+              onClick={() => setIsFlipped(true)}
+              className={`w-full py-3 rounded-2xl text-center text-xs font-extrabold tracking-wide border transition-all duration-300 flex items-center justify-center gap-1.5 shadow-md cursor-pointer ${
+                pkg.highlight 
+                  ? "bg-gradient-to-r from-emerald-400 via-emerald-500 to-teal-400 text-slate-950 border-emerald-300 shadow-emerald-500/30 hover:brightness-110" 
+                  : "bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-500 shadow-emerald-600/25 hover:from-emerald-500 hover:to-teal-500"
+              }`}
+            >
               <span>Scopri funzionalità</span>
               <span className="text-sm">➔</span>
             </div>
@@ -91,18 +92,21 @@ function PackageCard({ pkg }) {
               : "bg-slate-900 text-white border border-slate-800 shadow-2xl"
           }`}
         >
-          <CardHeader className="p-6 md:p-8 pb-4 border-b border-slate-800 shrink-0">
-            <div className="flex items-center justify-between">
+          <CardHeader className="p-6 md:p-8 pb-4 border-b border-slate-800 shrink-0 flex flex-row items-center justify-between">
+            <div>
               <CardTitle className="text-xl font-extrabold text-white">
                 Incluso in {pkg.name}
               </CardTitle>
-              <span className="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                Specifiche
-              </span>
             </div>
+            {/* Pulsante per tornare indietro sul retro */}
+            <button 
+              onClick={() => setIsFlipped(false)}
+              className="text-xs font-bold text-emerald-400 bg-emerald-500/20 border border-emerald-500/30 px-3 py-1.5 rounded-full hover:bg-emerald-500/30 transition-colors flex items-center gap-1 cursor-pointer"
+            >
+              <RotateCw className="w-3 h-3" /> Indietro
+            </button>
           </CardHeader>
 
-          {/* Area contenuto con scroll gestito in caso di molti elementi */}
           <CardContent className="p-6 md:p-8 py-4 flex-1 overflow-y-auto [scrollbar-width:thin] [scrollbar-color:#334155_transparent]">
             <ul className="space-y-3 md:space-y-3.5">
               {pkg.features?.map((feat, idx) => (
@@ -114,7 +118,7 @@ function PackageCard({ pkg }) {
             </ul>
           </CardContent>
 
-          <CardFooter className="p-6 md:p-8 pt-4 border-t border-slate-800/80 shrink-0" onClick={(e) => e.stopPropagation()}>
+          <CardFooter className="p-6 md:p-8 pt-4 border-t border-slate-800/80 shrink-0">
             <Button 
               asChild
               className={`w-full h-11 rounded-2xl font-bold text-xs cursor-pointer transition-all duration-300 ${
@@ -129,7 +133,7 @@ function PackageCard({ pkg }) {
                     ? `/contatti?topic=${pkg.topic}`
                     : pkg.id === 'zeno-one' || pkg.name === 'Zeno One'
                       ? '/contatti?topic=tech' 
-                      : '/contatti?topic=quote'
+                      : '/contatti$topic=quote' // correggici se era /contatti?topic=quote
                 } 
                 className="flex items-center justify-center gap-2"
               >
