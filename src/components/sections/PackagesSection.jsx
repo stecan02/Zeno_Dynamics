@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { RotateCw, Check, ArrowRight } from 'lucide-react'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
@@ -7,11 +7,30 @@ import { Link } from "react-router-dom"
 
 function PackageCard({ pkg }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const cardRef = useRef(null);
+
+  // Gestisce la chiusura cliccando fuori dalla card (solo su mobile quando è girata)
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (isFlipped && cardRef.current && !cardRef.current.contains(event.target)) {
+        setIsFlipped(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isFlipped]);
 
   return (
     <div 
+      ref={cardRef}
       className="group h-[620px] [perspective:1000px] cursor-pointer"
-      // Il click gestisce il giro su mobile. Su desktop l'hover gestisce tutto da solo.
+      // Su mobile il click sulla card inverte lo stato. Su desktop l'hover gestisce tutto.
       onClick={() => setIsFlipped(!isFlipped)}
     >
       {/* Contenitore 3D: su desktop usa l'hover, su mobile usa lo stato isFlipped */}
