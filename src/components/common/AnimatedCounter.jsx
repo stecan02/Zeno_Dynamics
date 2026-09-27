@@ -58,19 +58,16 @@ export function AnimatedCounter({ value, duration = 1600, placeholder = "888.8" 
   }, [value, duration]);
 
   return (
-    <div
+  <div
+    data-language-ignore
+    className="inline-block font-mono font-bold tracking-tight select-none"
+  >
+    <span
       data-language-ignore
-      className="relative inline-block font-mono font-bold tracking-tight select-none"
+      className="text-slate-900 bg-gradient-to-r from-slate-900 via-emerald-950 to-emerald-700 bg-clip-text text-transparent"
     >
-      <span className="text-slate-100 dark:text-slate-800/30 select-none opacity-80" aria-hidden="true">
-        {placeholder}
-      </span>
-      <span
-        data-language-ignore
-        className="absolute left-0 top-0 z-10 text-slate-900 bg-gradient-to-r from-slate-900 via-emerald-950 to-emerald-700 bg-clip-text text-transparent"
-      >
-        {count}
-      </span>
-    </div>
-  );
+      {count}
+    </span>
+  </div>
+);
 }
