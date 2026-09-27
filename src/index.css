@@ -94,7 +94,5 @@
 
   body {
     @apply bg-background text-foreground;
-    background-color: white;
-    color: black;
   }
 }
