@@ -30,15 +30,11 @@ export function ServicesPage() {
           
           {/* Header Principale */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-600/20 bg-emerald-50 px-3.5 py-1 text-xs font-medium tracking-wide text-emerald-700 backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5" />
-              Ecosistema Zeno Dynamics
-            </div>
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight text-slate-900 leading-tight">
-              Tecnologia autonoma per lo <span className="text-emerald-700">smaltimento smart</span>
+              L'Ecosistema<br></br> <span className="text-emerald-700">Zeno Dynamics</span>
             </h1>
             <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed">
-              Un'infrastruttura integrata a 3 livelli: hardware AI, piattaforma cloud analitica e consumabili ad alte prestazioni.
+              Un'infrastruttura integrata a 3 livelli: hardware AI, piattaforma cloud analytics e consumabili smart.
             </p>
           </div>
 
