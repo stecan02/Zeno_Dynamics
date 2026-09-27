@@ -1,13 +1,15 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from 'react';
 
 export function AnimatedCounter({ value, duration = 1600, placeholder = "888.8" }) {
-  const [count, setCount] = useState("0");
+  const [count, setCount] = useState(value);
+  const prevValueRef = useRef(value);
 
   useEffect(() => {
     const numericMatch = String(value).match(/^([+-]?)([0-9]+(?:\.[0-9]+)?)(.*)$/);
 
     if (!numericMatch) {
       setCount(value);
+      prevValueRef.current = value;
       return;
     }
 
@@ -16,6 +18,15 @@ export function AnimatedCounter({ value, duration = 1600, placeholder = "888.8" 
     const target = sign * parseFloat(numericPart);
     const suffix = numericMatch[3] || "";
     const isDecimal = numericPart.includes(".");
+
+    // Se il valore non è cambiato rispetto al precedente, evitiamo di far partire l'animazione a vuoto
+    if (prevValueRef.current === value) {
+      setCount(value);
+      return;
+    }
+
+    prevValueRef.current = value;
+
     let startTime = null;
     let animationFrameId = null;
 
@@ -47,11 +58,17 @@ export function AnimatedCounter({ value, duration = 1600, placeholder = "888.8" 
   }, [value, duration]);
 
   return (
-    <div className="relative inline-block font-mono font-bold tracking-tight select-none">
+    <div
+      data-language-ignore
+      className="relative inline-block font-mono font-bold tracking-tight select-none"
+    >
       <span className="text-slate-100 dark:text-slate-800/30 select-none opacity-80" aria-hidden="true">
         {placeholder}
       </span>
-      <span className="absolute left-0 top-0 z-10 text-slate-900 bg-gradient-to-r from-slate-900 via-emerald-950 to-emerald-700 bg-clip-text text-transparent">
+      <span
+        data-language-ignore
+        className="absolute left-0 top-0 z-10 text-slate-900 bg-gradient-to-r from-slate-900 via-emerald-950 to-emerald-700 bg-clip-text text-transparent"
+      >
         {count}
       </span>
     </div>
