@@ -6,13 +6,7 @@ export function HeroSection() {
   return (
     <section id="home" className="grid items-center gap-12 pt-4 lg:grid-cols-12 lg:gap-16">
       <div className="space-y-7 lg:col-span-7">
-        <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-600/20 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-700 backdrop-blur-md">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-600" />
-          </span>
-          <span className="text-[11px] uppercase tracking-wide">Edge AI Vision • Built for business</span>
-        </div>
+        
 
         <h1 className="text-4xl font-black leading-[1.08] tracking-tight text-slate-950 sm:text-6xl">
           Una nuova <span className="bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">gestione dei rifiuti</span> per il tuo business

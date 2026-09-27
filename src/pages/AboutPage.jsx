@@ -144,13 +144,7 @@ export function AboutPage() {
         <section className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16 pt-4">
           <div className="space-y-7 lg:col-span-7">
             
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-emerald-600/20 bg-emerald-500/10 px-4 py-1.5 text-xs font-semibold text-emerald-700 backdrop-blur-md">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
-              </span>
-              <span className="tracking-wide uppercase text-[11px]">Next-Gen Edge AI Vision • Built in Italy</span>
-            </div>
+            
 
             <h1 className="text-4xl font-black tracking-tight text-slate-950 sm:text-6xl leading-[1.08]">
               Non basta raccogliere dati.{' '}
