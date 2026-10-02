@@ -96,3 +96,28 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Scrollbar globale */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #020617;
+}
+
+/* Chrome / Edge / Safari */
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: #020617;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+  border: 2px solid #020617;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}

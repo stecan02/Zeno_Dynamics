@@ -11,6 +11,8 @@ import { RentalSection } from "./components/sections/RentalSection" // <-- Impor
 import { ContactPage } from "./pages/ContactPage"
 import { ServicesPage } from "./pages/ServicesPage"
 import { AboutPage } from "./pages/AboutPage"
+import { AiPage } from './pages/AiPage'
+import CloudPage from './pages/CloudPage'
 
 // Componente per la Home
 function HomePage() {
@@ -46,6 +48,8 @@ export default function App() {
         } />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/Home" element={<HomePage />} />
+        <Route path="/AiPage" element={<AiPage />} />
+        <Route path="/CloudPage" element={<CloudPage />} />
       </Routes>
 
       <Footer />

@@ -186,8 +186,8 @@ export function Footer() {
               <li><a href="#gamma" className="hover:text-emerald-400 transition-colors">Zeno One</a></li>
               <li><a href="#gamma" className="hover:text-emerald-400 transition-colors">Zeno Industrial</a></li>
               <li><a href="#gamma" className="hover:text-emerald-400 transition-colors">Zeno Enterprise</a></li>
-              <li><a href="#features" className="hover:text-emerald-400 transition-colors">Edge AI & Computer Vision</a></li>
-              <li><a href="#analytics" className="hover:text-emerald-400 transition-colors">Cloud Analytics ESG</a></li>
+              <li><a href="/AiPage" className="hover:text-emerald-400 transition-colors">Edge AI & Computer Vision</a></li>
+              <li><a href="/CloudPage" className="hover:text-emerald-400 transition-colors">Cloud Analytics ESG</a></li>
             </ul>
           </div>
 
